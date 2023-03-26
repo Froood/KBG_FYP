@@ -43,4 +43,10 @@ public class loginChoice extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(loginChoice.this,signin_signup_choice.class);
+        startActivity(intent);
+        finish();
+    }
 }

@@ -1,67 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/simplebackgroundcolor"
     tools:context=".signupChoice">
+
 
 
     <TextView
         android:id="@+id/signup_choice_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/fredrick"
         android:gravity="center"
         android:text="Sign Up As"
         android:textColor="@color/black"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:id="@+id/signup_choice_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signup_choice_page"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center"
-        android:text="Choose your sign up option below"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="243dp"
+        android:layout_height="251dp"
+        android:src="@drawable/kbg_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385">
+
+
+    </ImageView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/userSignup_choice_btn"
-        android:layout_width="100dp"
-        android:layout_height="65dp"
-        android:layout_below="@id/signup_choice_page"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
         android:backgroundTint="@color/teal_700"
-        android:text="User" />
+        android:text="User"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.302" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/driverSignup_choice_btn"
-        android:layout_width="100dp"
-        android:layout_height="65dp"
-        android:layout_below="@id/userSignup_choice_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/teal_700"
-        android:text="Driver" />
+        android:text="Driver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/userSignup_choice_btn"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.302" />
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

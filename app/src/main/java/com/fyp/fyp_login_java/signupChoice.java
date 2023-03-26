@@ -34,9 +34,15 @@ public class signupChoice extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(signupChoice.this, driver_signup.class));
-
+                finish();
             }
 
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(signupChoice.this,signin_signup_choice.class);
+        startActivity(intent);
+        finish();
     }
 }

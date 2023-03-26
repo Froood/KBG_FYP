@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(SplashActivity.this,signin_signup_choice.class);
+                    Intent intent = new Intent(SplashActivity.this,driver_signup.class);
                     startActivity(intent);
                     finish();
                 }

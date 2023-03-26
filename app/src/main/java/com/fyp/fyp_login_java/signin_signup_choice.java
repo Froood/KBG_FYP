@@ -27,14 +27,6 @@ public class signin_signup_choice extends AppCompatActivity {
         MaterialButton signin_page_btn  = (MaterialButton) findViewById(R.id.signin_page_btn);
         MaterialButton signup_page_btn= (MaterialButton) findViewById(R.id.signup_page_btn);
 
-
-
-
-
-
-
-
-
         signin_page_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -57,4 +49,9 @@ public class signin_signup_choice extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+      super.onBackPressed();
+    }
+
 }

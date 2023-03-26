@@ -84,7 +84,14 @@ public class driverSignIn extends AppCompatActivity {
 
                 // open Register activity
                 startActivity(new Intent(driverSignIn.this, SignUp.class));
+                finish();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(driverSignIn.this,loginChoice.class);
+        startActivity(intent);
+        finish();
     }
 }

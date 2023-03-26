@@ -103,7 +103,14 @@ public class MainActivity extends AppCompatActivity {
 
                 // open Register activity
                 startActivity(new Intent(MainActivity.this, SignUp.class));
+                finish();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MainActivity.this,loginChoice.class);
+        startActivity(intent);
+        finish();
     }
 }

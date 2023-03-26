@@ -27,6 +27,7 @@ public class driver_signup extends AppCompatActivity {
     CountryCodePicker ccp;
     EditText fullname, email, phone, password, conPassword, t1;
     Button b1;
+    String flag;
     // create object of DatabaseReference class to access firebase's Realtime Database
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kgb-registeration-firebase-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
@@ -43,7 +44,7 @@ public class driver_signup extends AppCompatActivity {
         password = findViewById(R.id.password);
         b1 = findViewById(R.id.b1);
         conPassword = findViewById(R.id.conPassword);
-
+        flag="false";
         final TextView loginNowBtn = findViewById(R.id.loginNow);
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -96,19 +97,21 @@ public class driver_signup extends AppCompatActivity {
                                 // sending data to firebase Realtime Database.
                                 // we are using phone number as unique identity of every user.
                                 // so all the other details of user comes under phone number
-                                databaseReference.child("drivers").child(t1Txt).child("fullname").setValue(fullnameTxt);
+                               /* databaseReference.child("drivers").child(t1Txt).child("fullname").setValue(fullnameTxt);
                                 databaseReference.child("drivers").child(t1Txt).child("email").setValue(emailTxt);
-                                databaseReference.child("drivers").child(t1Txt).child("password").setValue(passwordTxt);
+                                databaseReference.child("drivers").child(t1Txt).child("password").setValue(passwordTxt);*/
 
                                 // show a success message then finish the activity
                                 Intent intent = new Intent(driver_signup.this, manageotp.class);
                                 intent.putExtra("fullname",fullnameTxt);
                                 intent.putExtra("email",emailTxt);
                                 intent.putExtra("password",passwordTxt);
+                                intent.putExtra("phoneno", t1Txt);
+                                intent.putExtra("checkFlag", flag);
                                 intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
                                 startActivity(intent);
                                 //Toast.makeText(SignUp.this, "User SignUped successfully.", Toast.LENGTH_SHORT).show();
-                                //finish();
+                                finish();
                             }
                         }
 
@@ -125,11 +128,17 @@ public class driver_signup extends AppCompatActivity {
         loginNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finish();
             }
         });
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(driver_signup.this,signupChoice.class);
+        startActivity(intent);
+        finish();
+    }
 //    public void sendOTP(View view) {
 //        final String fullnameTxt = fullname.getText().toString();
 //        final String emailTxt = email.getText().toString();

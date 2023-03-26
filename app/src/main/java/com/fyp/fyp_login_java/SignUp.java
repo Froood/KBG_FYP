@@ -42,6 +42,7 @@ public class SignUp extends AppCompatActivity {
     CountryCodePicker ccp;
     EditText fullname, email, phone, password, conPassword, t1;
     Button b1;
+    String  flag ;
     // create object of DatabaseReference class to access firebase's Realtime Database
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kgb-registeration-firebase-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
@@ -50,13 +51,15 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        flag="true";
         t1=findViewById(R.id.t1);
         ccp=findViewById(R.id.ccp);
         ccp.registerCarrierNumberEditText(t1);
+        phone= findViewById(R.id.t1);
         fullname = findViewById(R.id.fullname);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        b1 = findViewById(R.id.b1);
+        b1 = findViewById(R.id.sendOtpBtn);
         conPassword = findViewById(R.id.conPassword);
 
         final TextView loginNowBtn = findViewById(R.id.loginNow);
@@ -112,19 +115,26 @@ public class SignUp extends AppCompatActivity {
                                 // sending data to firebase Realtime Database.
                                 // we are using phone number as unique identity of every user.
                                 // so all the other details of user comes under phone number
-                                databaseReference.child("users").child(t1Txt).child("fullname").setValue(fullnameTxt);
-                                databaseReference.child("users").child(t1Txt).child("email").setValue(emailTxt);
-                                databaseReference.child("users").child(t1Txt).child("password").setValue(passwordTxt);
+
+/*
+                                    databaseReference.child("users").child(t1Txt).child("fullname").setValue(fullnameTxt);
+                                    databaseReference.child("users").child(t1Txt).child("email").setValue(emailTxt);
+                                    databaseReference.child("users").child(t1Txt).child("password").setValue(passwordTxt);*/
+
+
 
                                 // show a success message then finish the activity
                                 Intent intent = new Intent(SignUp.this, manageotp.class);
                                 intent.putExtra("fullname", fullnameTxt);
                                 intent.putExtra("email", emailTxt);
                                 intent.putExtra("password", passwordTxt);
+                                intent.putExtra("phoneno", t1Txt);
+                                intent.putExtra("checkFlag", flag);
                                 intent.putExtra("mobile", ccp.getFullNumberWithPlus().replace(" ", ""));
-                                startActivity(intent);
+
                                 //Toast.makeText(SignUp.this, "User SignUped successfully.", Toast.LENGTH_SHORT).show();
-                                //finish();
+                                startActivity(intent);
+                                finish();
                             }
                         }
 
@@ -142,11 +152,22 @@ public class SignUp extends AppCompatActivity {
         loginNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
     }
 
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SignUp.this,signupChoice.class);
+        startActivity(intent);
+        finish();
+    }
 //    public void sendOTP(View view) {
 //        final String fullnameTxt = fullname.getText().toString();
 //        final String emailTxt = email.getText().toString();
