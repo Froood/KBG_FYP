@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.fyp.fyp_login_java'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.fyp.fyp_login_java"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+    implementation 'androidx.appcompat:appcompat:1.7.0-alpha01'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.support.constraint:constraint-layout-solver:2.0.4'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    implementation 'com.google.android.gms:play-services-location:21.0.1' //Location dependency
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
+    implementation 'com.github.VishnuSivadasVS:Advanced-HttpURLConnection:1.2'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation 'com.hbb20:ccp:2.5.4'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+
+    // Add the dependency for the Cloud Storage library
+    implementation 'com.google.firebase:firebase-storage'
+
+}
