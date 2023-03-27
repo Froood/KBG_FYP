@@ -27,22 +27,19 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(MainActivity.isLoggedInPrefs,0);
                 boolean hasLoggedIn= sharedPreferences.getBoolean("UserLoggedIn",false);
 
-
                 if(hasLoggedIn){
                     Intent intent= new Intent(SplashActivity.this,userMenu.class);
                     startActivity(intent);
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(SplashActivity.this,driver_signup.class);
+                    Intent intent = new Intent(SplashActivity.this,signin_signup_choice.class);
                     startActivity(intent);
                     finish();
                 }
             }
         },2400);
 
-
     }
-
 
 }

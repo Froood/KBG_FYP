@@ -37,7 +37,7 @@ public class userMenu extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                Intent intent = new Intent(userMenu.this,feedbackPage.class);
+                Intent intent = new Intent(userMenu.this,UserList.class);
                 startActivity(intent);
                 finish();
             }

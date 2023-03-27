@@ -114,7 +114,6 @@ public class manageotp extends AppCompatActivity {
 
     }
 
-
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -123,12 +122,10 @@ public class manageotp extends AppCompatActivity {
                         if (task.isSuccessful())
                         {
                             if(Objects.equals(flag, "true")){
-
                                 Toast.makeText(manageotp.this, "User Flag", Toast.LENGTH_SHORT).show();
                                 databaseReference.child("users").child(phonenumber2).child("fullname").setValue(fullname);
                                 databaseReference.child("users").child(phonenumber2).child("email").setValue(email);
                                 databaseReference.child("users").child(phonenumber2 ).child("password").setValue(password);
-
                             }
                             if(Objects.equals(flag, "false"))
                             {
@@ -137,8 +134,7 @@ public class manageotp extends AppCompatActivity {
                                 databaseReference.child("drivers").child(phonenumber2).child("email").setValue(email);
                                 databaseReference.child("drivers").child(phonenumber2 ).child("password").setValue(password);
                             }
-
-                            startActivity(new Intent(manageotp.this,complaintRegistration.class));
+                            startActivity(new Intent(manageotp.this,loginChoice.class));
                             finish();
                         } else {
                             Toast.makeText(getApplicationContext(),"SignIn Code Error",Toast.LENGTH_LONG).show();
