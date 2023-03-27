@@ -4,6 +4,7 @@ package com.fyp.fyp_login_java;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.id.setText(userdata.getStatus());
         holder.date.setText(userdata.getDate());
         holder.comment.setText(userdata.getComments());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,ItemDetails.class);
+                intent.putExtra("status", userdata.getStatus());
+                intent.putExtra("comments", userdata.getComments());
+
+                // Step 4: Start the new activity
+                context.startActivity(intent);
+            }
+        });
 
     }
 
