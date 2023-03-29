@@ -6,8 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".signin_signup_choice">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gradiant_green"
+            android:background="@drawable/round_corners"
+            android:tint="#50000000"
+            android:scaleType="fitXY"
+            >
+        </ImageView>
+    </FrameLayout>
 
-    <ImageView
+<ImageView
         android:layout_width="243dp"
         android:layout_height="251dp"
         android:src="@drawable/kbg_logo"
@@ -16,8 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signin_signup_choice_page"
         app:layout_constraintVertical_bias="0.558">
-
-
     </ImageView>
 
     <TextView
@@ -27,7 +39,7 @@
         android:layout_marginTop="64dp"
         android:gravity="center"
         android:text="Kachra Be Gone"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:fontFamily="@font/fredrick"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -43,8 +55,8 @@
         android:layout_marginBottom="96dp"
         android:gravity="center"
         android:text="Already have an account?"
-        android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signin_signup_choice_page"
@@ -60,9 +72,10 @@
         android:layout_marginBottom="68dp"
         android:gravity="center"
         android:text="Make a new account"
-        android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         android:textStyle="bold"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/signin_page_btn"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -73,7 +86,8 @@
         android:layout_below="@id/sign_up_text"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         android:text="Sign In"
         app:layout_constraintBottom_toTopOf="@+id/already_exist"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +101,8 @@
         android:layout_below="@id/already_exist"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         android:text="Sign Up"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_text"
         app:layout_constraintEnd_toEndOf="parent"

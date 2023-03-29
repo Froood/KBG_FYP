@@ -4,9 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/recycle_bg"
     tools:context=".SignUp">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gradiant_green"
+            android:background="@drawable/round_corners"
+            android:tint="#50000000"
+            android:scaleType="fitXY"
+            >
+        </ImageView>
+    </FrameLayout>
     <TextView
         android:id="@+id/usersignup"
         android:layout_width="match_parent"
@@ -16,10 +29,10 @@
         android:layout_alignParentEnd="true"
         android:gravity="center"
         android:text="User Signup"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="35dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/fredrick"
+
+        android:fontFamily="@font/nexa_heavy"
         app:layout_constraintBottom_toTopOf="@+id/t1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,14 +40,18 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/t1"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/password"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="12dp"
-        android:background="#70000000"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:drawablePadding="20dp"
+        android:drawableLeft="@drawable/baseline_call_24"
         android:hint="Phone"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:inputType="phone"
         android:padding="20dp"
         android:textColor="@color/white"
@@ -48,11 +65,14 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/email"
         android:layout_marginBottom="16dp"
-        android:background="#70000000"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
         android:hint="Username"
         android:padding="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/email"
@@ -66,9 +86,12 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/t1"
         android:layout_marginBottom="16dp"
-        android:background="#70000000"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:hint="Email"
         android:padding="20dp"
         android:textColor="@color/white"
@@ -85,30 +108,19 @@
         android:layout_below="@+id/password"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="36dp"
-        android:background="#70000000"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:drawableLeft="@drawable/ic_baseline_password_24"
         android:drawablePadding="20dp"
         android:hint="Retype Password"
         android:inputType="textPassword"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
-        android:layout_width="76dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/email"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:background="#90000000"
-        app:ccp_defaultNameCode="PK"
-        app:layout_constraintBottom_toTopOf="@+id/fullname"
-        app:layout_constraintEnd_toStartOf="@+id/t1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -119,9 +131,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="13dp"
-        android:background="#70000000"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:drawableLeft="@drawable/ic_baseline_password_24"
         android:drawablePadding="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="20dp"
@@ -156,6 +171,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:paddingTop="10dp">
 
             <TextView
@@ -163,9 +179,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/sendOtpBtn"
                 android:layout_toStartOf="@+id/loginNow"
-                android:paddingRight="22dp"
                 android:text="Already have an account?"
-                android:textColor="@color/black" />
+                android:paddingRight="22dp"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/loginNow"
@@ -174,7 +190,7 @@
                 android:layout_alignBottom="@+id/sendOtpBtn"
                 android:layout_alignParentEnd="true"
                 android:text="Login Now"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
