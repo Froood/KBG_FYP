@@ -34,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         UserData userdata = arrayList.get(position);
         holder.id.setText(userdata.getStatus());
         holder.date.setText(userdata.getDate());
-        holder.comment.setText(userdata.getComments());
+        //holder.comment.setText(userdata.getComments());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +42,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent = new Intent(context,ItemDetails.class);
                 intent.putExtra("status", userdata.getStatus());
                 intent.putExtra("comments", userdata.getComments());
+                intent.putExtra("imageUrl", userdata.getImage());
 
                 // Step 4: Start the new activity
                 context.startActivity(intent);
@@ -64,7 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             id = itemView.findViewById(R.id.listID);
             date= itemView.findViewById(R.id.listDate);
-            comment=itemView.findViewById(R.id.listComments);
+            //comment=itemView.findViewById(R.id.listComments);
 
         }
     }

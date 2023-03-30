@@ -3,7 +3,7 @@ package com.fyp.fyp_login_java;
 public class UserData {
 
 
-    String status, Date, Comments;
+    String status, Date, Comments, image;
 
     public String getStatus() {
         return status;
@@ -17,5 +17,7 @@ public class UserData {
         return Comments;
     }
 
-
+    public String getImage() {
+        return image;
+    }
 }

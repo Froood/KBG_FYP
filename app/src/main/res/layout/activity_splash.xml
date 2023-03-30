@@ -18,7 +18,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/gradiant_green"
             android:tint="#80000000">
-
         </ImageView>
     </FrameLayout>
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -17,8 +18,8 @@ public class loginChoice extends AppCompatActivity {
         setContentView(R.layout.activity_login_choice);
 
 
-        MaterialButton userLogin_choice_btn= (MaterialButton) findViewById(R.id.userLogin_choice_btn);
-        MaterialButton driverLogin_choice_btn= (MaterialButton) findViewById(R.id.driverLogin_choice_btn);
+        Button userLogin_choice_btn=  findViewById(R.id.userLogin_choice_btn);
+        Button driverLogin_choice_btn=  findViewById(R.id.driverLogin_choice_btn);
 
         userLogin_choice_btn.setOnClickListener(new View.OnClickListener(){
             @Override

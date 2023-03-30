@@ -227,4 +227,9 @@ public class UserLocation extends AppCompatActivity {
         return isEnabled;
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

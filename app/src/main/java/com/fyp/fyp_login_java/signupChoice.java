@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -16,8 +17,8 @@ public class signupChoice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_choice);
 
-        MaterialButton userSignup_choice_btn = (MaterialButton) findViewById(R.id.userSignup_choice_btn);
-        MaterialButton driverSignup_choice_btn = (MaterialButton) findViewById(R.id.driverSignup_choice_btn);
+        Button userSignup_choice_btn =  findViewById(R.id.userSignup_choice_btn);
+        Button driverSignup_choice_btn =  findViewById(R.id.driverSignup_choice_btn);
 
         userSignup_choice_btn.setOnClickListener(new View.OnClickListener(){
             @Override

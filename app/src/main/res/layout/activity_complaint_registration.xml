@@ -9,14 +9,16 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="70dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:background="@drawable/round_corners"
             android:src="@drawable/gradiant_green"
-            android:tint="#50000000"></ImageView>
+            android:tint="#50000000">
+
+        </ImageView>
 
 
     </FrameLayout>

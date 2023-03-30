@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -26,7 +28,7 @@ public class feedbackPage extends AppCompatActivity {
     //assigning variables
     EditText comment;
     RadioButton r1,r2,r3,r4,r5,r6;
-    MaterialButton btnfeedbacksubmit;
+    Button btnfeedbacksubmit;
     MaterialButton button1;
 
     int childCount=0;
@@ -47,7 +49,7 @@ public class feedbackPage extends AppCompatActivity {
         r4 =findViewById(R.id.radiotBtn4);
         r5 =findViewById(R.id.radiotBtn5);
         r6 =findViewById(R.id.radiotBtn6);
-        btnfeedbacksubmit= (MaterialButton) findViewById(R.id.submitBtn);
+        btnfeedbacksubmit=  findViewById(R.id.submitBtn);
         button1 = (MaterialButton) findViewById(R.id.button_return);
         //
          DatabaseReference temp;
@@ -152,48 +154,48 @@ public class feedbackPage extends AppCompatActivity {
                 //
 
                 //
-                if(r1.isChecked()) {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("Very Satisfied");
+                if(commenttxt.isEmpty()) {
 
+                    Toast.makeText(feedbackPage.this, "Feedback Box is Empty!", Toast.LENGTH_SHORT).show();
                 }
-                else if(r2.isChecked()) {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("Satisfied");
-                }
-                else if(r3.isChecked()) {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("Good");
-                }
-                else if(r4.isChecked()) {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("OK");
-                }
-                else if(r5.isChecked()) {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("Dissatisfied");
-                }
-                else {
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("username").setValue(name);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("phone").setValue(retID);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("description").setValue(commenttxt);
-                    databaseReference.child("feedback").child(String.valueOf(childCount+1)).child("rating").setValue("Very Dissatisfied");
-                }
-                 Intent intent = new Intent(feedbackPage.this,userMenu.class);
-                                startActivity(intent);
-                                finish();
-                Toast.makeText(feedbackPage.this,"Complaint Submitted", Toast.LENGTH_SHORT ).show();
+                else{
+                    if (r1.isChecked()) {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("Very Satisfied");
 
+                    } else if (r2.isChecked()) {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("Satisfied");
+                    } else if (r3.isChecked()) {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("Good");
+                    } else if (r4.isChecked()) {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("OK");
+                    } else if (r5.isChecked()) {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("Dissatisfied");
+                    } else {
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("username").setValue(name);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("phone").setValue(retID);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("description").setValue(commenttxt);
+                        databaseReference.child("feedback").child(String.valueOf(childCount + 1)).child("rating").setValue("Very Dissatisfied");
+                    }
+                    Intent intent = new Intent(feedbackPage.this, userMenu.class);
+                    startActivity(intent);
+                    finish();
+                    Toast.makeText(feedbackPage.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
+                }
 
 
             }

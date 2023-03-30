@@ -7,15 +7,30 @@
     tools:context=".signupChoice">
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_corners"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradiant_green"
+            android:tint="#80000000"
+            tools:ignore="UseAppTint">
+
+        </ImageView>
+    </FrameLayout>
     <TextView
         android:id="@+id/signup_choice_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/fredrick"
+        android:fontFamily="@font/nexa_heavy"
         android:gravity="center"
         android:text="Sign Up As"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
@@ -24,9 +39,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="243dp"
-        android:layout_height="251dp"
-        android:src="@drawable/kbg_logo"
+        android:layout_width="278dp"
+        android:layout_height="264dp"
+        android:src="@drawable/kbg_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,25 +51,27 @@
 
     </ImageView>
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/userSignup_choice_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:backgroundTint="@color/teal_700"
+        android:layout_marginStart="60dp"
+        android:background="@drawable/custom_round_button"
         android:text="User"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.303" />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/driverSignup_choice_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/teal_700"
         android:text="Driver"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_round_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"

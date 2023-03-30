@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,39 +9,46 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/round_corners"
             android:src="@drawable/gradiant_green"
-            android:tint="#50000000"></ImageView>
+            android:tint="#50000000"
+            tools:ignore="UseAppTint">
 
+        </ImageView>
+
+        <TextView
+            android:id="@+id/logoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nexa_heavy"
+            android:paddingBottom="20dp"
+            android:text="Waste Management System"
+            android:layout_marginStart="15dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Waste Management System"
-            android:textColor="@color/white"
-            android:fontFamily="@font/nexa_heavy"
-            android:paddingBottom="20dp"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-      <!--  <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/white" />-->
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/showComplaintBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
         <FrameLayout
             android:id="@+id/frame_layout_preview"
@@ -52,29 +59,12 @@
 
             <ImageView
                 android:id="@+id/image_view_preview"
-                android:layout_width="378dp"
-                android:layout_height="140dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="Preview"
-                android:scaleType="fitCenter"
-                android:background="@color/black"
-                android:src="@drawable/kbg_shadow" />
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/kbg_black_text" />
 
-            <TextView
-                android:id="@+id/text_view_preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No photo attached"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:visibility="gone" />
         </FrameLayout>
-     <!--   <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/black" />
-      -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,14 +76,14 @@
                 android:id="@+id/total_complaints_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="00"
                 android:paddingHorizontal="10dp"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/showComplaintBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/teal_700"
@@ -115,8 +105,8 @@
                 android:id="@+id/lodged_complaints_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
                 android:paddingHorizontal="10dp"
+                android:text="00"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -144,8 +134,8 @@
                 android:id="@+id/resolved_complaints_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
                 android:paddingHorizontal="10dp"
+                android:text="00"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -173,8 +163,8 @@
                 android:id="@+id/rejected_complaints_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
                 android:paddingHorizontal="10dp"
+                android:text="00"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -199,12 +189,12 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/other_projects_count"
+                android:id="@+id/feedback_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/teal_700"
-                android:text="0"
                 android:paddingHorizontal="10dp"
+                android:text="00"
+                android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -212,76 +202,64 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/teal_700"
                 android:text="Feedback"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
         </LinearLayout>
-       <!-- <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/black" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_go_complaintPage"
-                android:layout_width="337dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/teal_700"
-                android:elevation="2dp"
-                android:text="Register Complaint"
-                android:textSize="20dp"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/showComplaintBtn"
-                android:layout_width="337dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/teal_700"
-                android:elevation="2dp"
-                android:text="Show Complaint"
-                android:textSize="20dp"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="20dp">
-
-            <Button
-                android:id="@+id/Logout"
-                android:layout_width="198dp"
-                android:layout_height="60dp"
-                android:text="LogOut"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:backgroundTint="@color/teal_700"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                app:layout_constraintVertical_bias="0.548" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+   <!-- <com.google.android.material.button.MaterialButton
+        android:id="@+id/showComplaintBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_700"
+        android:elevation="2dp"
+        android:text="Show Complaint"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_go_complaintPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_go_complaintPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/custom_round_button"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:text="Register Complaint"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="LogOut"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
