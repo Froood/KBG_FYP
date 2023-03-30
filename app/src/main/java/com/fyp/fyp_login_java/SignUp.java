@@ -53,8 +53,8 @@ public class SignUp extends AppCompatActivity {
 
         flag="true";
         t1=findViewById(R.id.t1);
-        ccp=findViewById(R.id.ccp);
-        ccp.registerCarrierNumberEditText(t1);
+       // ccp=findViewById(R.id.ccp);
+       // ccp.registerCarrierNumberEditText(t1);
         phone= findViewById(R.id.t1);
         fullname = findViewById(R.id.fullname);
         email = findViewById(R.id.email);
@@ -130,7 +130,7 @@ public class SignUp extends AppCompatActivity {
                                 intent.putExtra("password", passwordTxt);
                                 intent.putExtra("phoneno", t1Txt);
                                 intent.putExtra("checkFlag", flag);
-                                intent.putExtra("mobile", ccp.getFullNumberWithPlus().replace(" ", ""));
+                               // intent.putExtra("mobile", ccp.getFullNumberWithPlus().replace(" ", ""));
 
                                 //Toast.makeText(SignUp.this, "User SignUped successfully.", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);

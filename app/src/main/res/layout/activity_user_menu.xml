@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/simplebackgroundcolor"
     tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corners"
+            android:src="@drawable/gradiant_green"
+            android:tint="#50000000"></ImageView>
+
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,17 +32,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Waste Management System"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nexa_heavy"
+            android:paddingBottom="20dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
-
-
-        <View
+      <!--  <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/black" />
+            android:background="@color/white" />-->
 
         <FrameLayout
             android:id="@+id/frame_layout_preview"
@@ -44,9 +57,8 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="Preview"
                 android:scaleType="fitCenter"
-                android:src="@drawable/logoimg" />
-
-
+                android:background="@color/black"
+                android:src="@drawable/kbg_shadow" />
 
             <TextView
                 android:id="@+id/text_view_preview"
@@ -57,11 +69,12 @@
                 android:textSize="18sp"
                 android:visibility="gone" />
         </FrameLayout>
-        <View
+     <!--   <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="@color/black" />
+      -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,18 +84,18 @@
 
             <TextView
                 android:id="@+id/total_complaints_count"
-                android:layout_width="49dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:paddingHorizontal="10dp"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="329dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/teal_700"
                 android:text="Total complaints"
                 android:textColor="@color/white"
@@ -100,9 +113,10 @@
 
             <TextView
                 android:id="@+id/lodged_complaints_count"
-                android:layout_width="42dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:paddingHorizontal="10dp"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -110,9 +124,8 @@
             <Button
                 android:id="@+id/button2"
 
-                android:layout_width="334dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/teal_700"
                 android:text="Lodged complaints"
                 android:textColor="@color/white"
@@ -129,16 +142,17 @@
 
             <TextView
                 android:id="@+id/resolved_complaints_count"
-                android:layout_width="53dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:paddingHorizontal="10dp"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="325dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/teal_700"
@@ -157,18 +171,19 @@
 
             <TextView
                 android:id="@+id/rejected_complaints_count"
-                android:layout_width="31dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:paddingHorizontal="10dp"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="347dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+
                 android:backgroundTint="@color/teal_700"
                 android:text="Rejected complaints"
                 android:textColor="@color/white"
@@ -185,17 +200,17 @@
 
             <TextView
                 android:id="@+id/other_projects_count"
-                android:layout_width="46dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:text="0"
                 android:textColor="@color/teal_700"
+                android:text="0"
+                android:paddingHorizontal="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button5"
-                android:layout_width="332dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/teal_700"
@@ -204,28 +219,39 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
-        <View
+       <!-- <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/black" />
+            android:background="@color/black" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginTop="56dp">
+            >
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_go_complaintPage"
                 android:layout_width="337dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/teal_700"
                 android:elevation="2dp"
                 android:text="Register Complaint"
+                android:textSize="20dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/showComplaintBtn"
+                android:layout_width="337dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/teal_700"
+                android:elevation="2dp"
+                android:text="Show Complaint"
+                android:textSize="20dp"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -243,6 +269,7 @@
                 android:layout_width="198dp"
                 android:layout_height="60dp"
                 android:text="LogOut"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:backgroundTint="@color/teal_700"
@@ -253,8 +280,6 @@
                 app:layout_constraintVertical_bias="0.548" />
 
         </LinearLayout>
-
-
 
     </LinearLayout>
 

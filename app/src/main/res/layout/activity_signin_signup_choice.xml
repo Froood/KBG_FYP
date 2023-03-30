@@ -4,47 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".signin_signup_choice">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/gradiant_green"
             android:background="@drawable/round_corners"
-            android:tint="#50000000"
-            android:scaleType="fitXY"
-            >
-        </ImageView>
+            android:src="@drawable/gradiant_green"
+            android:tint="#50000000"></ImageView>
+
+
     </FrameLayout>
 
-<ImageView
-        android:layout_width="243dp"
-        android:layout_height="251dp"
-        android:src="@drawable/kbg_logo"
+    <ImageView
+        android:layout_width="297dp"
+        android:layout_height="310dp"
+        android:src="@drawable/kbg_shadow"
         app:layout_constraintBottom_toTopOf="@+id/signup_page_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin_signup_choice_page"
-        app:layout_constraintVertical_bias="0.558">
-    </ImageView>
-
-    <TextView
-        android:id="@+id/signin_signup_choice_page"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:text="Kachra Be Gone"
-        android:textColor="@color/white"
-        android:fontFamily="@font/fredrick"
-        android:textSize="35dp"
-        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.925"></ImageView>
 
     <TextView
         android:id="@+id/already_exist"
@@ -52,15 +38,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signin_page_btn"
         android:layout_margin="0dp"
-        android:layout_marginBottom="96dp"
         android:gravity="center"
         android:text="Already have an account?"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/space_grotesk_var"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin_signup_choice_page"
-        app:layout_constraintVertical_bias="0.781"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
@@ -68,49 +54,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signup_page_btn"
-        android:layout_margin="0dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
-        android:text="Make a new account"
+        android:fontFamily="@font/space_grotesk_var"
+        android:text="Make a new Account"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:textStyle="bold"
-        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/signin_page_btn"
         tools:layout_editor_absoluteX="0dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signin_page_btn"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_below="@id/sign_up_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"
         android:text="Sign In"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        android:background="@drawable/custom_round_button"
         app:layout_constraintBottom_toTopOf="@+id/already_exist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup_page_btn"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_below="@id/already_exist"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
+        android:textSize="16dp"
         android:text="Sign Up"
+        android:textColor="@color/white"
+        android:elevation="100dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/custom_round_button"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin_signup_choice_page"
-        app:layout_constraintVertical_bias="0.954" />
-
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

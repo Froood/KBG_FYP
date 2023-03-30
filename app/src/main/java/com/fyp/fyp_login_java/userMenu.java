@@ -37,11 +37,21 @@ public class userMenu extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                Intent intent = new Intent(userMenu.this,UserList.class);
+                Intent intent = new Intent(userMenu.this,feedbackPage.class);
                 startActivity(intent);
                 finish();
             }
 
+        });
+
+        Button showComplaintBtn = findViewById(R.id.showComplaintBtn);
+        showComplaintBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(userMenu.this,UserList.class);
+                startActivity(intent);
+                finish();
+            }
         });
 
         btn=(Button)findViewById(R.id.Logout);
@@ -61,4 +71,5 @@ public class userMenu extends AppCompatActivity {
             }
         });
     }
+
 }

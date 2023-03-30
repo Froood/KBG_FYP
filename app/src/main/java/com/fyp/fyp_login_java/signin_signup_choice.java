@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.material.button.MaterialButton;
+//import com.google.android.material.button.MaterialButton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,8 +25,8 @@ public class signin_signup_choice extends AppCompatActivity {
         setContentView(R.layout.activity_signin_signup_choice);
 
 
-        MaterialButton signin_page_btn  = (MaterialButton) findViewById(R.id.signin_page_btn);
-        MaterialButton signup_page_btn= (MaterialButton) findViewById(R.id.signup_page_btn);
+        Button signin_page_btn  =  findViewById(R.id.signin_page_btn);
+        Button signup_page_btn=    findViewById(R.id.signup_page_btn);
 
         signin_page_btn.setOnClickListener(new View.OnClickListener(){
             @Override

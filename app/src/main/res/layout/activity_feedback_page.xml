@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corners"
+            android:src="@drawable/gradiant_green"
+            android:tint="#50000000">
+
+        </ImageView>
+
+
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
@@ -26,7 +45,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Feedback Submission:"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nexa_heavy"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -36,7 +56,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:paddingTop="30dp"
             android:text="Submit your feedback:"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -73,7 +95,7 @@
                     android:id="@+id/radiotBtn1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:text="Very Satisfied"
                     android:textColor="@color/black" />
 
@@ -81,7 +103,7 @@
                     android:id="@+id/radiotBtn2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:text="Satisfied"
                     android:textColor="@color/black" />
 
@@ -89,7 +111,7 @@
                     android:id="@+id/radiotBtn3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:checked="true"
                     android:text="Good"
                     android:textColor="#000000"
@@ -99,7 +121,7 @@
                     android:id="@+id/radiotBtn4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:text="OK"
                     android:textColor="@color/black" />
 
@@ -107,7 +129,7 @@
                     android:id="@+id/radiotBtn5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:text="Dissatisfied"
                     android:textColor="@color/black" />
 
@@ -115,7 +137,7 @@
                     android:id="@+id/radiotBtn6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/teal_200"
+                    android:buttonTint="@color/teal_700"
                     android:text="Very Dissatisfied"
                     android:textColor="@color/black" />
 
@@ -142,13 +164,13 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submitBtn"
-                android:layout_width="491dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/teal_700"
+                android:background="@drawable/round_buttons"
                 android:elevation="2dp"
                 android:text="Submit"
                 android:textAllCaps="false"

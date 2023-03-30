@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(SplashActivity.this,signin_signup_choice.class);
+                    Intent intent = new Intent(SplashActivity.this,userMenu.class);
                     startActivity(intent);
                     finish();
                 }
