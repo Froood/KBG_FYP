@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ public class driverSignIn extends AppCompatActivity {
 
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kgb-registeration-firebase-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
+    public static String activeDriverID= "activeDriverID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +58,13 @@ public class driverSignIn extends AppCompatActivity {
 
                                 if (getPassword.equals(passwordTxt)) {
                                     Toast.makeText(driverSignIn.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
-
+                                    //Saving Active ID
+                                   SharedPreferences sharedPreferences = getSharedPreferences(driverSignIn.activeDriverID,0);
+                                   SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString("activeDriverID",phoneTxt);
+                                    editor.apply();
                                     // open MainActivity on success
-                                    startActivity(new Intent(driverSignIn.this, userMenu.class));
+                                    startActivity(new Intent(driverSignIn.this, DriverPortal.class));
                                     finish();
                                 } else {
                                     Toast.makeText(driverSignIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
@@ -83,7 +88,7 @@ public class driverSignIn extends AppCompatActivity {
             public void onClick(View v) {
 
                 // open Register activity
-                startActivity(new Intent(driverSignIn.this, SignUp.class));
+                startActivity(new Intent(driverSignIn.this, driver_signup.class));
                 finish();
             }
         });

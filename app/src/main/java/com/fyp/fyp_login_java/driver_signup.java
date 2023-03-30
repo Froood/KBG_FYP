@@ -37,12 +37,12 @@ public class driver_signup extends AppCompatActivity {
         setContentView(R.layout.activity_driver_signup);
 
         t1=findViewById(R.id.t1);
-        ccp=findViewById(R.id.ccp);
-        ccp.registerCarrierNumberEditText(t1);
+       // ccp=findViewById(R.id.ccp);
+       // ccp.registerCarrierNumberEditText(t1);
         fullname = findViewById(R.id.fullname);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        b1 = findViewById(R.id.b1);
+        b1 = findViewById(R.id.sendOtpBtn);
         conPassword = findViewById(R.id.conPassword);
         flag="false";
         final TextView loginNowBtn = findViewById(R.id.loginNow);
@@ -108,7 +108,7 @@ public class driver_signup extends AppCompatActivity {
                                 intent.putExtra("password",passwordTxt);
                                 intent.putExtra("phoneno", t1Txt);
                                 intent.putExtra("checkFlag", flag);
-                                intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
+                                //intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
                                 startActivity(intent);
                                 //Toast.makeText(SignUp.this, "User SignUped successfully.", Toast.LENGTH_SHORT).show();
                                 finish();
@@ -128,7 +128,8 @@ public class driver_signup extends AppCompatActivity {
         loginNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(driver_signup.this,driverSignIn.class        );
+                startActivity(intent);
                 finish();
             }
         });

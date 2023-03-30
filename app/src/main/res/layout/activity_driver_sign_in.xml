@@ -4,11 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/recycle_bg"
     tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_corners"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradiant_green"
+            android:tint="#50000000">
+
+        </ImageView>
+    </FrameLayout>
 
 
     <TextView
+        android:id="@+id/driversignin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nexa_heavy"
+        android:gravity="center"
+        android:text="Driver Sign In "
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usersignin"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/round_corners"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#90000000"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawablePadding="20dp"
+            android:hint="Mobile No"
+            android:inputType="phone"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="#90000000"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_baseline_password_24"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="236dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/teal_700"
+            android:layout_gravity="center_horizontal"
+            android:text="Login"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="426dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account?"
+                android:textColor="@color/white"
+                android:paddingRight="30dp"/>
+
+            <TextView
+                android:id="@+id/registerNowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register Now"
+                android:textColor="@color/teal_200"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+   <!-- <TextView
         android:id="@+id/driversignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,7 +260,7 @@
 
     </LinearLayout>
 
-<!--    <TextView
+&lt;!&ndash;    <TextView
         android:id="@+id/driversignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -217,6 +353,6 @@
         android:layout_marginEnd="58dp"
         android:layout_marginBottom="100dp"
         android:text="Register Now"
-        android:textStyle="bold" />-->
-
+        android:textStyle="bold" />&ndash;&gt;
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
