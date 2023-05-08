@@ -88,7 +88,7 @@ public class userMenu extends AppCompatActivity {
                 finish();
             }
         });
-        MaterialButton btnfeedback= (MaterialButton) findViewById(R.id.button5);
+        Button btnfeedback=  findViewById(R.id.button5);
         btnfeedback.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

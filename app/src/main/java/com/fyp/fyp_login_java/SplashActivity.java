@@ -29,12 +29,12 @@ public class SplashActivity extends AppCompatActivity {
                 boolean hasLoggedIn= sharedPreferences.getBoolean("UserLoggedIn",false);
 
                 if(hasLoggedIn){
-                    Intent intent= new Intent(SplashActivity.this,userMenu.class);
+                    Intent intent= new Intent(SplashActivity.this,WhatClone.class);
                     startActivity(intent);
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(SplashActivity.this,signin_signup_choice.class);
+                    Intent intent = new Intent(SplashActivity.this,WhatClone.class);
                     startActivity(intent);
                     finish();
                 }
