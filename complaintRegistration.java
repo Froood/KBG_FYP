@@ -1,4 +1,4 @@
-package com.fyp.fyp_login_java;
+package com.example.fyp_objectdetection;
 
 import static android.content.ContentValues.TAG;
 
@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,7 +85,7 @@ public class complaintRegistration extends AppCompatActivity  implements ObjectD
         objectDetection = new ObjectDetection(this);
 
         // TODO: Add Objects Here
-        objectsList.addAll(Arrays.asList("Plastic Bag","Plastic Bottle","Bottle","Paper", "Apple", "Office Supplies", "Fruits"));
+        objectsList.addAll(Arrays.asList("Plastic Bag","Bottle","Fruits","Apple"));
         //Code for CheckBox data
         checkButton = findViewById(R.id.submitBtn);
         c1 = findViewById(R.id.plasticBox);
@@ -178,7 +181,7 @@ public class complaintRegistration extends AppCompatActivity  implements ObjectD
             {
                 //Code for CheckBox data
                 if(c1.isChecked() || c2.isChecked() || c3.isChecked()) {
-                        //uploadImageToFirebase(imageUri);
+                        uploadImageToFirebase(imageUri);
                         if(imageUri==null ){
                             Toast.makeText(complaintRegistration.this, "image null", Toast.LENGTH_SHORT).show();
                         }
@@ -325,19 +328,17 @@ public class complaintRegistration extends AppCompatActivity  implements ObjectD
 
     @Override
     public void onObjectDetectionResult(JSONObject detectedObjects) {
-        Log.d("OD_Tag", "object detection result initiated" );
         if (detectedObjects.has("objects")) {
             List<String> labelsList = getObjectLabels(detectedObjects);
             for(String a: labelsList){
 //                textView.setText(textView.getText()+" "+a);
             }
             if (compareLists(labelsList).size()!=0) {
-
-                uploadImageToFirebase(imageUri);
+                // TODO: Send this image to Firebase
 
             }else{
                 // TODO: Discard this image
-                Toast.makeText(this, "No Object Detected/ Image Upload Failure", Toast.LENGTH_SHORT).show();
+
             }
         }
     }

@@ -20,9 +20,7 @@
         android:theme="@style/Theme.Fyp_Login_Java"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".WhatClone"
-            android:exported="false" />
+        
         <activity
             android:name=".DriverPortal"
             android:exported="false">

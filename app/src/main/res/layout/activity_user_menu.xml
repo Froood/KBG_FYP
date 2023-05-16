@@ -46,7 +46,7 @@
         android:orientation="vertical"
 
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/showComplaintBtn"
+        app:layout_constraintBottom_toTopOf="@+id/button_go_complaintPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
@@ -78,8 +78,8 @@
                 android:id="@+id/total_complaints_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00"
                 android:paddingHorizontal="10dp"
+                android:text="00"
                 android:textColor="@color/teal_700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -88,9 +88,9 @@
                 android:id="@+id/showComplaintBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total complaints"
-                android:fontFamily="@font/roboto_regular"
                 android:background="@drawable/round_buttons"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Total complaints"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -204,9 +204,9 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feedback"
-                android:fontFamily="@font/roboto_regular"
                 android:background="@drawable/round_buttons"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Feedback"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -230,41 +230,38 @@
         app:layout_constraintStart_toStartOf="parent" />-->
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Logout"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_round_button"
+        android:fontFamily="@font/roboto_regular"
+        android:text="LogOut"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_go_complaintPage"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/gradiant_green"
         android:elevation="2dp"
+        android:fontFamily="@font/roboto_regular"
         android:gravity="center"
         android:text="Register Complaint"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintBottom_toTopOf="@+id/Logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Logout"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="56dp"
-        android:background="@drawable/custom_round_button"
-        android:text="LogOut"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
