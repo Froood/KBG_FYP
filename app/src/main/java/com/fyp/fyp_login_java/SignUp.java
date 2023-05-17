@@ -53,8 +53,8 @@ public class SignUp extends AppCompatActivity {
 
         flag="true";
         t1=findViewById(R.id.t1);
-       // ccp=findViewById(R.id.ccp);
-       // ccp.registerCarrierNumberEditText(t1);
+        //ccp=findViewById(R.id.ccp);
+        //ccp.registerCarrierNumberEditText(t1);
         phone= findViewById(R.id.t1);
         fullname = findViewById(R.id.fullname);
         email = findViewById(R.id.email);
@@ -73,7 +73,7 @@ public class SignUp extends AppCompatActivity {
                 final String emailTxt = email.getText().toString();
                 final String passwordTxt = password.getText().toString();
                 final String conPasswordTxt = conPassword.getText().toString();
-                final String t1Txt = t1.getText().toString();
+                final String t1Txt = phone.getText().toString();
 
                 // check if user fill all the fields before sending data to firebase
                 if (fullnameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty() || conPasswordTxt.isEmpty() || t1Txt.isEmpty()) {
@@ -92,9 +92,9 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "Name must be alphabetic", Toast.LENGTH_SHORT).show();
                 }
 
-                else if(!t1Txt.matches("([0-9]{11})")) {
-                    Toast.makeText(SignUp.this, "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-                }
+//                else if(!t1Txt.matches("([0-9]{11})")) {
+//                    Toast.makeText(SignUp.this, "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+//                }
 
                 // check if passwords are matching with each other
                 //  if not matching with each other then show a toast messsage
@@ -130,7 +130,8 @@ public class SignUp extends AppCompatActivity {
                                 intent.putExtra("password", passwordTxt);
                                 intent.putExtra("phoneno", t1Txt);
                                 intent.putExtra("checkFlag", flag);
-                               // intent.putExtra("mobile", ccp.getFullNumberWithPlus().replace(" ", ""));
+                                intent.putExtra("mobile", t1Txt.replace("0", "+92"));
+                                //intent.putExtra("mobile", ccp.getFullNumberWithPlus().replace(" ", ""));
 
                                 //Toast.makeText(SignUp.this, "User SignUped successfully.", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);

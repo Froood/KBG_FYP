@@ -200,6 +200,7 @@ public class complaintRegistration extends AppCompatActivity  implements ObjectD
                             databaseReference.child("complaints").child(retID).child(String.valueOf(childCountComplaint + 1)).child("Longitude").setValue(longitudeData);
                             databaseReference.child("complaints").child(retID).child(String.valueOf(childCountComplaint + 1)).child("Latitude").setValue(latitudeData);
                             databaseReference.child("complaints").child(retID).child(String.valueOf(childCountComplaint + 1)).child("Date").setValue(dateString);
+                            databaseReference.child("complaints").child(retID).child(String.valueOf(childCountComplaint + 1)).child("status").setValue("pending");
 
                             Intent intent = new Intent(complaintRegistration.this, userMenu.class);
                             startActivity(intent);

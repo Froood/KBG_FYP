@@ -4,24 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grey_bg"
+    android:background="@drawable/recycle_bg"
     tools:context=".DriverPortal">
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/driverStatusUpdateBtn"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="368dp"
-        android:background="@drawable/custom_round_button"
-        android:fontFamily="@font/roboto_regular"
-        android:text="Job Done"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corners"
+            android:src="@drawable/gradiant_green"
+            android:tint="#50000000"
+            tools:ignore="UseAppTint">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/logoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nexa_heavy"
+            android:paddingBottom="20dp"
+            android:text="Driver Portal"
+            android:layout_marginStart="15dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,9 +50,11 @@
         android:fontFamily="@font/nexa_heavy"
         android:padding="20dp"
         android:text="Driver Status:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         app:layout_constraintBottom_toTopOf="@+id/driverStatusUpdateBtn"
         app:layout_constraintEnd_toStartOf="@+id/driverStatus"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,20 +82,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="184dp"
         android:fontFamily="@font/nexa_heavy"
         android:padding="20dp"
         android:text="Driver Name:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#90000000"
         android:textSize="25dp"
-        android:layout_marginStart="10dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/driverStatusUpdateBtn"
         app:layout_constraintEnd_toStartOf="@+id/driverStatus"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.303" />
 
     <TextView
         android:id="@+id/driverName"
@@ -88,8 +111,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/driverStatusUpdateBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693" />
+        app:layout_constraintVertical_bias="0.332" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/driverStatusUpdateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/custom_round_button"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Job Done"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

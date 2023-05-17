@@ -122,14 +122,14 @@ public class manageotp extends AppCompatActivity {
                         if (task.isSuccessful())
                         {
                             if(Objects.equals(flag, "true")){
-                                Toast.makeText(manageotp.this, "User Flag", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(manageotp.this, "User Successfully Signed", Toast.LENGTH_SHORT).show();
                                 databaseReference.child("users").child(phonenumber2).child("fullname").setValue(fullname);
                                 databaseReference.child("users").child(phonenumber2).child("email").setValue(email);
                                 databaseReference.child("users").child(phonenumber2 ).child("password").setValue(password);
                             }
                             if(Objects.equals(flag, "false"))
                             {
-                                Toast.makeText(manageotp.this, "Driver Flag", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(manageotp.this, "Driver Successfully Signed", Toast.LENGTH_SHORT).show();
                                 databaseReference.child("drivers").child(phonenumber2).child("fullname").setValue(fullname);
                                 databaseReference.child("drivers").child(phonenumber2).child("email").setValue(email);
                                 databaseReference.child("drivers").child(phonenumber2 ).child("password").setValue(password);

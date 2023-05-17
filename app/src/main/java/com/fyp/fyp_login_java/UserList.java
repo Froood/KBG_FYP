@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +27,8 @@ public class UserList extends AppCompatActivity {
     MyAdapter myAdapter;
     ArrayList<UserData> list;
 
+    String acc= "accepted";
+    String status = "pending";
 
 
     @Override
@@ -51,10 +54,47 @@ public class UserList extends AppCompatActivity {
 
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                    UserData userData = dataSnapshot.getValue(UserData.class);
-                    list.add(userData);
+
+                  //  if(status == acc){}
+                        UserData userData = dataSnapshot.getValue(UserData.class);
+                        Log.d("TAG", "onDataChange: " + userData.getStatus());
+                        if(userData.getStatus().equals("accepted"))
+                        {
+                            list.add(userData);
+                        }
 
                 }
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+
+                  //  if(status == acc){}
+                        UserData userData = dataSnapshot.getValue(UserData.class);
+                        Log.d("TAG", "onDataChange: " + userData.getStatus());
+                        if(userData.getStatus().equals("rejected"))
+                        {
+                            list.add(userData);
+                        }
+
+
+
+                }
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+
+                  //  if(status == acc){}
+                        UserData userData = dataSnapshot.getValue(UserData.class);
+                        Log.d("TAG", "onDataChange: " + userData.getStatus());
+                        if(userData.getStatus().equals("pending"))
+                        {
+                            list.add(userData);
+                        }
+
+
+
+                }
+
+
+
                     myAdapter.notifyDataSetChanged();
             }
 
